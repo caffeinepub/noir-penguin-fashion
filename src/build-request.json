@@ -1,0 +1,206 @@
+{
+  "kind": "build_request",
+  "title": "Add admin settings panel for store configuration",
+  "projectName": "Noir Penguin Fashion",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "text": "Create admin settings page with navigation route '/admin/settings' displaying store configuration options in a dark luxury theme (matte black background with soft pink accents)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "And all setting",
+          "Settings Panel"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Settings page is accessible at /admin/settings route",
+        "Page uses matte black background with soft pink accent colors matching brand identity",
+        "Settings organized in clean card-based sections",
+        "Page is responsive for desktop and tablet"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Implement store information settings section allowing admin to update store name, contact email, phone number, and business address",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Store info"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form fields for store name, email, phone, and address",
+        "Save button persists changes to backend",
+        "Success/error toast notifications on save",
+        "Current values pre-populate form fields"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Add payment methods configuration section to enable/disable Stripe payment options and manage payment gateway settings",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Payment methods"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Toggle switches for enabling/disabling payment methods",
+        "Input fields for Stripe API configuration",
+        "Settings persist to backend storage",
+        "Visual indicators show active/inactive payment methods"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Create shipping rates configuration allowing admin to set flat rate, free shipping threshold, and region-specific shipping costs",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Shipping rates"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Input fields for flat rate shipping cost",
+        "Input field for minimum order amount for free shipping",
+        "Table or list for adding region-specific rates",
+        "Add/edit/delete actions for regional rates",
+        "All shipping rates saved to backend"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Implement tax settings section to configure sales tax percentage and tax-exempt regions",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Tax settings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Numeric input for default tax percentage",
+        "Multi-select or list for tax-exempt regions",
+        "Settings apply to order calculations",
+        "Changes persist to backend"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Add admin roles management section displaying list of admin users with their assigned roles (Super Admin, Product Manager, Order Manager, Customer Support) and ability to update role assignments",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Admin roles"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Table listing all admin users with current roles",
+        "Dropdown or select to change user roles",
+        "Save button updates role assignments in backend",
+        "Only Super Admin can modify roles",
+        "Role changes reflect immediately in access control"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Create logo upload feature allowing admin to upload and replace the store logo image with preview and file validation",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Logo upload"
+        ]
+      },
+      "acceptanceCriteria": [
+        "File upload input accepting image formats (PNG, JPG, SVG)",
+        "Preview of current logo image",
+        "Preview of newly selected image before upload",
+        "Maximum file size validation",
+        "Uploaded logo stored as blob in backend",
+        "Success notification on successful upload"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Implement theme color customization allowing admin to modify primary brand colors (matte black, soft pink, silver) and secondary colors (lavender, icy blue) with color picker inputs",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Change theme color"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color picker inputs for each brand color (black, pink, silver, lavender, blue)",
+        "Live preview showing selected colors",
+        "Save button persists color choices to backend",
+        "Reset to default colors option",
+        "Color values stored in backend configuration"
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Add backend storage and retrieval methods for all settings configuration including store info, payment methods, shipping rates, tax settings, admin roles, logo blob, and theme colors in the main Motoko actor",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Settings Panel"
+        ]
+      },
+      "acceptanceCriteria": [
+        "StoreSettings type defined with all configuration fields",
+        "saveStoreSettings method persists settings",
+        "getStoreSettings method retrieves current settings",
+        "Access control restricts settings updates to admin users only",
+        "Settings data structure includes store info, payment config, shipping rates, tax config, theme colors"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use existing access control system from main.mo for admin authorization",
+    "Store logo as blob using existing blob storage mixins",
+    "Follow dark luxury theme (matte black + soft pink) consistent with existing admin pages",
+    "Do not modify frontend/src/hooks/useInternetIdentity.ts or frontend/src/hooks/useActor.ts",
+    "Settings page must be part of admin section with authentication required"
+  ],
+  "nonGoals": [
+    "Email service integration for sending notifications",
+    "SMS or push notification infrastructure",
+    "Third-party payment gateway integrations beyond Stripe",
+    "Multi-language settings or internationalization",
+    "Custom domain configuration",
+    "SEO settings management",
+    "Automated backup settings"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

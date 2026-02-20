@@ -1,0 +1,303 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Fashion eCommerce website for NOIR PENGUIN FASHION - a modern girls-only brand blending soft feminine energy with bold black aesthetics. Target audience: teen girls & young women. Style: black + pastel fusion (dark chic meets soft glam).",
+  "architectural_notes": [
+    "React + Next.js with Tailwind CSS for styling",
+    "Framer Motion for animations (glitter, sparkle, smooth scroll, fade transitions)",
+    "Stripe for payment processing",
+    "Visual identity: matte black, soft pink, silver, lavender, icy blue with rounded UI elements",
+    "Typography: bold modern serif for headlines, clean soft sans-serif for body",
+    "Floating penguin mascot icon throughout site",
+    "Instagram-style modern aesthetic with pink neon glow effects",
+    "Admin dashboard: React + Next.js with dark theme (matte black + soft pink accents)",
+    "Role-based authentication: JWT or Firebase Auth with Super Admin, Product Manager, Order Manager, Customer Support roles",
+    "Backend: Node.js + Express with MongoDB or MySQL for product/order/customer data"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-hero-section-with-headline-soft-bold-unstoppable-subtext-where-cute-meets-confidence-two-cta-buttons-labeled-shop-the-drop-and-discover-your-style-and-a-matte-black-background-with-soft-pink-glow-lighting-effect",
+      "title": "Implement hero section with headline 'Soft. Bold. Unstoppable.', subtext 'Where cute meets confidence.', two CTA buttons labeled 'Shop The Drop' and 'Discover Your Style', and a matte black background with soft pink glow lighting effect",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-shop-by-category-section-with-four-categories-noir-dresses-cozy-hoodies-pink-sets-and-accessories-each-with-pink-neon-border-glow-on-hover",
+      "title": "Create Shop by Category section with four categories: 'Noir Dresses', 'Cozy Hoodies', 'Pink Sets', and 'Accessories', each with pink neon border glow on hover",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-featured-collection-section-titled-midnight-drop-with-limited-edition-items-countdown-timer-stock-indicator-showing-only-x-left-quick-add-to-cart-button-and-wishlist-heart-animation",
+      "title": "Build Featured Collection section titled 'Midnight Drop' with limited edition items, countdown timer, stock indicator showing 'Only X Left', quick add-to-cart button, and wishlist heart animation",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-product-detail-page-with-large-image-slider-360-view-option-size-guide-fabric-details-star-rating-reviews-styled-by-you-photo-upload-feature-recommended-matching-pieces-and-sticky-add-to-cart-button-on-mobile",
+      "title": "Create product detail page with large image slider, 360° view option, size guide, fabric details, star rating reviews, 'Styled by You' photo upload feature, recommended matching pieces, and sticky 'Add to Cart' button on mobile",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-lookbook-section-with-scroll-based-animation-full-width-editorial-images-and-shop-the-look-feature-that-allows-users-to-purchase-items-shown-in-lookbook-images",
+      "title": "Implement Lookbook section with scroll-based animation, full-width editorial images, and shop-the-look feature that allows users to purchase items shown in lookbook images",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-about-noir-penguin-section-with-headline-stay-cool-stay-confident-brand-story-highlighting-created-for-bold-girls-confidence-driven-fashion-comfortable-but-powerful-designs-and-express-yourself-without-limits-plus-minimal-cute-penguin-mascot-logo-in-black-and-pink",
+      "title": "Create About Noir Penguin section with headline 'Stay Cool. Stay Confident.', brand story highlighting 'Created for bold girls', 'Confidence-driven fashion', 'Comfortable but powerful designs', and 'Express yourself without limits', plus minimal cute penguin mascot logo in black and pink",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-stripe-payment-processing-with-support-for-secure-checkout",
+      "title": "Integrate Stripe payment processing with support for secure checkout",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-rewards-points-system-that-tracks-user-points-birthday-discount-eligibility-and-student-discount-option",
+      "title": "Build rewards points system that tracks user points, birthday discount eligibility, and student discount option",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-order-tracking-system-that-displays-order-status-and-shipping-updates",
+      "title": "Implement order tracking system that displays order status and shipping updates",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-visual-identity-with-matte-black-soft-pink-and-silver-accent-primary-colors-lavender-and-icy-blue-secondary-colors-rounded-ui-elements-subtle-glitter-or-sparkle-animations-floating-tiny-penguin-mascot-icon-smooth-scroll-and-fade-transitions-bold-modern-serif-headlines-and-clean-soft-sans-serif-body-text",
+      "title": "Apply visual identity with matte black, soft pink, and silver accent primary colors; lavender and icy blue secondary colors; rounded UI elements; subtle glitter or sparkle animations; floating tiny penguin mascot icon; smooth scroll and fade transitions; bold modern serif headlines; and clean soft sans-serif body text",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-optimize-mobile-experience-with-swipeable-product-images-sticky-cart-icon-smooth-animated-transitions-and-lightweight-glow-effects",
+      "title": "Optimize mobile experience with swipeable product images, sticky cart icon, smooth animated transitions, and lightweight glow effects",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-settings-page-with-navigation-route-admin-settings-displaying-store-configuration-options-in-a-dark-luxury-theme-matte-black-background-with-soft-pink-accents",
+      "title": "Create admin settings page with navigation route '/admin/settings' displaying store configuration options in a dark luxury theme (matte black background with soft pink accents)",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-store-information-settings-section-allowing-admin-to-update-store-name-contact-email-phone-number-and-business-address",
+      "title": "Implement store information settings section allowing admin to update store name, contact email, phone number, and business address",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-payment-methods-configuration-section-to-enable-disable-stripe-payment-options-and-manage-payment-gateway-settings",
+      "title": "Add payment methods configuration section to enable/disable Stripe payment options and manage payment gateway settings",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-shipping-rates-configuration-allowing-admin-to-set-flat-rate-free-shipping-threshold-and-region-specific-shipping-costs",
+      "title": "Create shipping rates configuration allowing admin to set flat rate, free shipping threshold, and region-specific shipping costs",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-tax-settings-section-to-configure-sales-tax-percentage-and-tax-exempt-regions",
+      "title": "Implement tax settings section to configure sales tax percentage and tax-exempt regions",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-admin-roles-management-section-displaying-list-of-admin-users-with-their-assigned-roles-super-admin-product-manager-order-manager-customer-support-and-ability-to-update-role-assignments",
+      "title": "Add admin roles management section displaying list of admin users with their assigned roles (Super Admin, Product Manager, Order Manager, Customer Support) and ability to update role assignments",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-logo-upload-feature-allowing-admin-to-upload-and-replace-the-store-logo-image-with-preview-and-file-validation",
+      "title": "Create logo upload feature allowing admin to upload and replace the store logo image with preview and file validation",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-theme-color-customization-allowing-admin-to-modify-primary-brand-colors-matte-black-soft-pink-silver-and-secondary-colors-lavender-icy-blue-with-color-picker-inputs",
+      "title": "Implement theme color customization allowing admin to modify primary brand colors (matte black, soft pink, silver) and secondary colors (lavender, icy blue) with color picker inputs",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Hero section with headline, subtext, CTA buttons, and matte black with soft pink glow background",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Shop by Category section with 4 categories (Noir Dresses, Cozy Hoodies, Pink Sets, Accessories) with pink neon border glow hover effect",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Featured Collection 'Midnight Drop' with countdown timer, stock indicator, quick add-to-cart, and wishlist heart animation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Product page with image slider, 360° view, size guide, fabric details, reviews, user photo uploads, recommended items, and sticky mobile cart button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Lookbook section with scroll-based animation, full-width editorial images, and shop-the-look feature",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "About Noir Penguin section with brand story and mascot",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "eCommerce features: secure checkout, Apple Pay/Google Pay, wishlist, rewards points, birthday/student discounts, order tracking, AI size recommendation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Mobile-optimized experience with swipe images, sticky cart icon, fast checkout, smooth animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Implement eCommerce backend with product catalog, inventory management, shopping cart, wishlist system, and order management",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Admin dashboard with secure login, role-based access (Super Admin, Product Manager, Order Manager, Customer Support), and dark luxury theme (matte black + soft pink)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Dashboard overview page showing total sales, orders, products, customers, monthly revenue chart, recent orders, and low stock alerts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Product management: add/edit/delete products, bulk upload, mark as featured/limited drop, inventory tracking, out-of-stock toggle, filters by category/price/stock",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Order management: view orders, update payment/shipping status, add tracking, cancel/refund orders, print invoices, status labels (pending/paid/processing/shipped/delivered/cancelled)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Customer management: view profiles, order history, contact info, apply discounts, account management, reward points tracking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Discount & promo system: create discount codes, set percentage/fixed amount, expiry dates, usage limits, special Midnight Drop offers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Marketing tools: email campaigns, push notifications, banner management, homepage content editor, countdown timer control",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Inventory & stock control: auto low-stock alerts, track sold items, restock button, export stock reports (CSV)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Analytics & reports: sales charts, most sold products, revenue by month, customer growth, export reports (PDF/Excel)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Settings panel: store info, payment methods, shipping rates, tax settings, admin roles, logo upload, theme color customization",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Add backend storage and retrieval methods for all settings configuration including store info, payment methods, shipping rates, tax settings, admin roles, logo blob, and theme colors in the main Motoko actor",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "NOIR PENGUIN FASHION",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

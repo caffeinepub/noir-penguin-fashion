@@ -1,0 +1,193 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add admin settings panel for store configuration",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "summary": "Create admin settings page with navigation route '/admin/settings' displaying store configuration options in dark luxury theme",
+      "acceptanceCriteria": [
+        "Settings page is accessible at /admin/settings route",
+        "Page uses matte black background with soft pink accent colors matching brand identity",
+        "Settings organized in clean card-based sections",
+        "Page is responsive for desktop and tablet"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AdminSettingsPage.tsx",
+          "operation": "create",
+          "description": "Create admin settings page component that renders the settings form sections using the dark luxury theme (matte black background with soft pink accents). Fetch current store settings using useGetStoreSettings hook. Ensure authentication is required and admin role is checked using isCallerAdmin. Include sections for store info, payment methods, shipping rates, tax settings, admin roles, logo upload, and theme colors. Organize sections in card-based layout matching the existing admin page design patterns."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route configuration for '/admin/settings' path that renders AdminSettingsPage component. Ensure the route is placed alongside other admin routes in the router configuration."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Add navigation link to admin settings page in the header navigation for authenticated admin users. Place the link in the navigation menu alongside other admin links if they exist, or add to the main navigation with admin role check."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Implement store information settings section allowing admin to update store name, contact email, phone number, and business address",
+      "acceptanceCriteria": [
+        "Form fields for store name, email, phone, and address",
+        "Save button persists changes to backend",
+        "Success/error toast notifications on save",
+        "Current values pre-populate form fields"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/StoreInfoSection.tsx",
+          "operation": "create",
+          "description": "Create store information settings section component with form fields for store name (text input), contact email (email input), phone number (tel input), and business address (textarea). Use controlled form inputs with React state. Include a save button that calls the useUpdateStoreInfo mutation hook. Display success toast on successful save and error toast on failure. Pre-populate form fields with current values from the storeInfo prop passed from parent. Style the section as a card with dark background and pink accent borders matching the brand theme."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useGetStoreSettings query hook that calls actor.getStoreSettings() to fetch the current store settings. Add useUpdateStoreInfo mutation hook that calls actor.updateStoreInfo(info) and invalidates the 'storeSettings' query key on success. Include proper error handling and TypeScript types from backend.d.ts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Add payment methods configuration section to enable/disable Stripe payment options and manage payment gateway settings",
+      "acceptanceCriteria": [
+        "Toggle switches for enabling/disabling payment methods",
+        "Input fields for Stripe API configuration",
+        "Settings persist to backend storage",
+        "Visual indicators show active/inactive payment methods"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PaymentMethodsSection.tsx",
+          "operation": "create",
+          "description": "Create payment methods configuration section component with toggle switch for enabling/disabling Stripe payments. Include password input field for Stripe API key (secretKey) with show/hide toggle. Add multi-select or checkbox list for accepted card types (Visa, MasterCard, Amex, Discover). Display visual indicators (colored badges or icons) showing whether Stripe is active or inactive. Include save button that calls useUpdatePaymentMethods mutation hook. Pre-populate values from paymentMethods prop. Style as card matching dark luxury theme."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useUpdatePaymentMethods mutation hook that calls actor.updatePaymentMethods(methods) and invalidates the 'storeSettings' query key on success. Include proper TypeScript types for PaymentMethodsConfig from backend.d.ts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Create shipping rates configuration allowing admin to set flat rate, free shipping threshold, and region-specific shipping costs",
+      "acceptanceCriteria": [
+        "Input fields for flat rate shipping cost",
+        "Input field for minimum order amount for free shipping",
+        "Table or list for adding region-specific rates",
+        "Add/edit/delete actions for regional rates",
+        "All shipping rates saved to backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ShippingRatesSection.tsx",
+          "operation": "create",
+          "description": "Create shipping rates configuration section component with number input for flat rate (in cents), number input for free shipping threshold (in cents). Include a table or list displaying region-specific shipping costs with columns for region name and cost. Add buttons to add new region rate, edit existing rates, and delete rates. Use local state to manage the regionShippingCosts array. Include save button that calls useUpdateShippingRates mutation hook. Pre-populate values from shippingRates prop. Style as card with dark theme and pink accents."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useUpdateShippingRates mutation hook that calls actor.updateShippingRates(rates) and invalidates the 'storeSettings' query key on success. Include proper TypeScript types for ShippingRates from backend.d.ts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Implement tax settings section to configure sales tax percentage and tax-exempt regions",
+      "acceptanceCriteria": [
+        "Numeric input for default tax percentage",
+        "Multi-select or list for tax-exempt regions",
+        "Settings apply to order calculations",
+        "Changes persist to backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TaxSettingsSection.tsx",
+          "operation": "create",
+          "description": "Create tax settings section component with number input for sales tax percentage (0-100 range with decimal support). Include multi-select dropdown or tag input for tax-exempt regions (allow adding multiple region names). Include save button that calls useUpdateTaxSettings mutation hook. Pre-populate values from taxSettings prop. Display helper text explaining that tax applies to order calculations. Style as card matching dark luxury theme."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useUpdateTaxSettings mutation hook that calls actor.updateTaxSettings(tax) and invalidates the 'storeSettings' query key on success. Include proper TypeScript types for TaxSettings from backend.d.ts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Add admin roles management section displaying list of admin users with their assigned roles and ability to update role assignments",
+      "acceptanceCriteria": [
+        "Table listing all admin users with current roles",
+        "Dropdown or select to change user roles",
+        "Save button updates role assignments in backend",
+        "Only Super Admin can modify roles",
+        "Role changes reflect immediately in access control"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AdminRolesSection.tsx",
+          "operation": "create",
+          "description": "Create admin roles management section component displaying a table with columns for admin name, principal ID, and current role. For each row, include a dropdown select to change roles (superAdmin, productManager, orderManager, customerSupport). Add save button that calls useUpdateAdminRoles mutation hook. Pre-populate table rows from adminRoles array prop. Check if current user is Super Admin and disable editing if not. Display warning message if user lacks Super Admin role. Style as card matching dark luxury theme with hover effects on table rows."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useUpdateAdminRoles mutation hook that calls actor.updateAdminRoles(roles) and invalidates the 'storeSettings' query key on success. Include proper TypeScript types for AdminUser array from backend.d.ts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Create logo upload feature allowing admin to upload and replace the store logo image with preview and file validation",
+      "acceptanceCriteria": [
+        "File upload input accepting image formats (PNG, JPG, SVG)",
+        "Preview of current logo image",
+        "Preview of newly selected image before upload",
+        "Maximum file size validation",
+        "Uploaded logo stored as blob in backend",
+        "Success notification on successful upload"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/LogoUploadSection.tsx",
+          "operation": "create",
+          "description": "Create logo upload section component with file input accepting image/png, image/jpeg, image/svg+xml formats. Display preview of current logo using logo.getDirectURL() if available, or penguin logo as fallback. When file is selected, validate file size (max 2MB), display preview of selected image, and enable upload button. Use ExternalBlob.fromBytes() to create blob from file data. Include upload button that calls useUpdateLogo mutation hook with the ExternalBlob. Show success toast on successful upload. Style as card matching dark luxury theme with centered image previews and pink accent upload button."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useUpdateLogo mutation hook that calls actor.updateLogo(newLogo) where newLogo is an ExternalBlob instance. Invalidate the 'storeSettings' query key on success. Import ExternalBlob from backend.d.ts and use it properly for blob operations."
+        }
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "summary": "Implement theme color customization allowing admin to modify primary and secondary brand colors with color picker inputs",
+      "acceptanceCriteria": [
+        "Color picker inputs for each brand color (black, pink, silver, lavender, blue)",
+        "Live preview showing selected colors",
+        "Save button persists color choices to backend",
+        "Reset to default colors option",
+        "Color values stored in backend configuration"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ThemeColorsSection.tsx",
+          "operation": "create",
+          "description": "Create theme colors customization section component with color picker inputs for primary1 (matte black), primary2 (soft pink), primary3 (silver), secondary1 (lavender), and secondary2 (icy blue). Use HTML color input type='color' for each field. Display live preview swatches showing selected colors. Include save button that calls useUpdateThemeColors mutation hook. Include reset button that restores default color values from the brand palette. Pre-populate color pickers with current values from themeColors prop. Style as card with dark background and labeled color inputs in a grid layout."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useUpdateThemeColors mutation hook that calls actor.updateThemeColors(colors) and invalidates the 'storeSettings' query key on success. Include proper TypeScript types for ThemeColors from backend.d.ts."
+        }
+      ]
+    }
+  ]
+}

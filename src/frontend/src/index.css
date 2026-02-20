@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        
+        /* Noir Penguin Brand Colors */
+        --noir-black: 0.1 0 0;
+        --soft-pink: 0.85 0.15 350;
+        --silver: 0.75 0.02 240;
+        --lavender: 0.82 0.08 300;
+        --icy-blue: 0.8 0.08 220;
+        
+        /* Light Mode (keeping for compatibility) */
+        --background: 0.98 0 0;
+        --foreground: var(--noir-black);
+        --card: 1 0 0;
+        --card-foreground: var(--noir-black);
+        --popover: 1 0 0;
+        --popover-foreground: var(--noir-black);
+        --primary: var(--soft-pink);
+        --primary-foreground: var(--noir-black);
+        --secondary: var(--lavender);
+        --secondary-foreground: var(--noir-black);
+        --muted: 0.96 0 0;
+        --muted-foreground: 0.5 0 0;
+        --accent: var(--icy-blue);
+        --accent-foreground: var(--noir-black);
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.9 0 0;
+        --input: 0.9 0 0;
+        --ring: var(--soft-pink);
+    }
+
+    .dark {
+        /* Dark Mode - Noir Penguin Theme */
+        --background: var(--noir-black);
+        --foreground: 0.98 0 0;
+        --card: 0.15 0 0;
+        --card-foreground: 0.98 0 0;
+        --popover: 0.15 0 0;
+        --popover-foreground: 0.98 0 0;
+        --primary: var(--soft-pink);
+        --primary-foreground: var(--noir-black);
+        --secondary: var(--lavender);
+        --secondary-foreground: 0.98 0 0;
+        --muted: 0.2 0 0;
+        --muted-foreground: 0.6 0 0;
+        --accent: var(--icy-blue);
+        --accent-foreground: 0.98 0 0;
+        --destructive: 0.6 0.25 27;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.25 0 0;
+        --input: 0.2 0 0;
+        --ring: var(--soft-pink);
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+    }
+}
+
+@layer utilities {
+    /* Custom Brand Colors */
+    .bg-noirBlack {
+        background-color: oklch(var(--noir-black));
+    }
+    
+    .text-noirBlack {
+        color: oklch(var(--noir-black));
+    }
+    
+    .bg-softPink {
+        background-color: oklch(var(--soft-pink));
+    }
+    
+    .text-softPink {
+        color: oklch(var(--soft-pink));
+    }
+    
+    .bg-silver {
+        background-color: oklch(var(--silver));
+    }
+    
+    .text-silver {
+        color: oklch(var(--silver));
+    }
+    
+    .bg-lavender {
+        background-color: oklch(var(--lavender));
+    }
+    
+    .text-lavender {
+        color: oklch(var(--lavender));
+    }
+    
+    .bg-icyBlue {
+        background-color: oklch(var(--icy-blue));
+    }
+    
+    .text-icyBlue {
+        color: oklch(var(--icy-blue));
+    }
+    
+    .border-softPink {
+        border-color: oklch(var(--soft-pink));
+    }
+    
+    .border-lavender {
+        border-color: oklch(var(--lavender));
+    }
+
+    /* Custom Animations */
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+    
+    @keyframes sparkle {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.2);
+        }
+    }
+    
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-sparkle {
+        animation: sparkle 2s ease-in-out infinite;
+    }
+
+    /* Glow Effects */
+    .shadow-glow {
+        box-shadow: 0 0 20px oklch(var(--soft-pink) / 0.4);
+    }
+    
+    .shadow-neon {
+        box-shadow: 0 0 30px oklch(var(--soft-pink) / 0.6);
+    }
+    
+    .drop-shadow-glow {
+        filter: drop-shadow(0 0 15px oklch(var(--soft-pink) / 0.5));
+    }
+
+    /* Font Families */
+    .font-playfair {
+        font-family: 'Playfair Display', serif;
+    }
+    
+    .font-inter {
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: oklch(var(--noir-black));
+}
+
+::-webkit-scrollbar-thumb {
+    background: oklch(var(--soft-pink) / 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--soft-pink));
+}

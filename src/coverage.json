@@ -1,0 +1,155 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-19T19:39:41.350Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 9,
+    "implemented": 8,
+    "items": [
+      {
+        "id": "REQ-13",
+        "summary": "Create admin settings page with navigation route '/admin/settings' displaying store configuration options in a dark luxury theme (matte black background with soft pink accents)",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/AdminSettingsPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Layout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/AdminSettingsPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Layout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Implement store information settings section allowing admin to update store name, contact email, phone number, and business address",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/StoreInfoSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/StoreInfoSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Add payment methods configuration section to enable/disable Stripe payment options and manage payment gateway settings",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/PaymentMethodsSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/PaymentMethodsSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Create shipping rates configuration allowing admin to set flat rate, free shipping threshold, and region-specific shipping costs",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/ShippingRatesSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/ShippingRatesSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Implement tax settings section to configure sales tax percentage and tax-exempt regions",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/TaxSettingsSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/TaxSettingsSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-18",
+        "summary": "Add admin roles management section displaying list of admin users with their assigned roles (Super Admin, Product Manager, Order Manager, Customer Support) and ability to update role assignments",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/AdminRolesSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/AdminRolesSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Create logo upload feature allowing admin to upload and replace the store logo image with preview and file validation",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/LogoUploadSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/LogoUploadSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Implement theme color customization allowing admin to modify primary brand colors (matte black, soft pink, silver) and secondary colors (lavender, icy blue) with color picker inputs",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/ThemeColorsSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/ThemeColorsSection.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-21",
+        "summary": "Add backend storage and retrieval methods for all settings configuration including store info, payment methods, shipping rates, tax settings, admin roles, logo blob, and theme colors in the main Motoko actor",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/AdminRolesSection.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/LogoUploadSection.tsx",
+    "frontend/src/components/PaymentMethodsSection.tsx",
+    "frontend/src/components/ShippingRatesSection.tsx",
+    "frontend/src/components/StoreInfoSection.tsx",
+    "frontend/src/components/TaxSettingsSection.tsx",
+    "frontend/src/components/ThemeColorsSection.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/AdminSettingsPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
